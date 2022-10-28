@@ -6,11 +6,14 @@ public class Elv_States {
 	
 	public  String Moving_up = "Moving_up";
 	public  String Moving_down = "Moving_down";
-	public  String Determine_movement = "Determining_movement";
+	public  String Determining_movement = "Determining_movement";
 	public  String Arrival = "Arrival";
+	public	String Checking_validity = "Checking_input_validity";
 	public  String Current_State;
 	
 	public boolean check_input_validity(int dest_floor) {
+		Current_State = Checking_validity;
+		System.out.println("Current State: " + Current_State);
 		if((dest_floor < 0) || (dest_floor > 10)) {
 			return false;
 		}
@@ -19,7 +22,7 @@ public class Elv_States {
 	}
 	
 	public void movement(int dest_floor){
-		Current_State = Determine_movement;
+		Current_State = Determining_movement;
 		System.out.println("Current State: " + Current_State);
 		
 		try {
